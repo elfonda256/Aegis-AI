@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="d1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="60%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <filter id="d1Glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#050B18" rx="16"/>
+  <!-- Shield and Neural Structure -->
+  <g transform="translate(140, 20)">
+    <path d="M 60,10 L 105,28 C 105,75 84,106 60,118 C 36,106 15,75 15,28 Z" 
+          fill="#0B1120" stroke="url(#d1Grad)" stroke-width="3" filter="url(#d1Glow)"/>
+    <!-- Neural Branches -->
+    <path d="M 28,45 L 45,55 L 60,55 M 92,45 L 75,55 L 60,55" fill="none" stroke="#00E5FF" stroke-width="1.8"/>
+    <path d="M 60,25 L 78,85 L 67,85 L 63,73 L 57,73 L 53,85 L 42,85 Z" fill="#FFFFFF" filter="url(#d1Glow)"/>
+    <circle cx="60" cy="55" r="4" fill="#00E5FF"/>
+    <circle cx="28" cy="45" r="2.5" fill="#00E5FF"/>
+    <circle cx="92" cy="45" r="2.5" fill="#00E5FF"/>
+  </g>
+  <!-- Label -->
+  <text x="200" y="170" font-family="system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">DIRECTION 1: DIGITAL SHIELD</text>
+  <text x="200" y="195" font-family="system-ui, sans-serif" font-size="12" fill="#94A3B8" letter-spacing="1" text-anchor="middle">Protection + Neural Intelligence (Selected Winner)</text>
+</svg>

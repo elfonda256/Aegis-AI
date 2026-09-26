@@ -1,0 +1,655 @@
+/* ==========================================================================
+   AEGIS AI — Enterprise Dual Mode Theme (Executive Light & Cyber Dark)
+   Target Instance: https://chat.exac.site
+   Inspiration: Anthropic Claude / ChatGPT Enterprise / Linear Clean
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace !important;
+  
+  --aegis-blue: #2563EB;
+  --aegis-blue-hover: #1D4ED8;
+  --aegis-blue-subtle: rgba(37, 99, 235, 0.08);
+  --aegis-cyan: #00E5FF;
+  --aegis-cyan-subtle: rgba(0, 229, 255, 0.08);
+  --aegis-emerald: #10B981;
+}
+
+body, html {
+  font-family: var(--font-sans) !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* ==========================================================================
+   1. REFINED EXECUTIVE LIGHT MODE (Claude / Linear / Enterprise SaaS)
+   ========================================================================== */
+html:not(.dark),
+html.light {
+  color-scheme: light !important;
+}
+
+html:not(.dark) body,
+html.light body {
+  background-color: #F9FAFB !important;
+  color: #1F2937 !important;
+  background-image: none !important;
+}
+
+html:not(.dark) nav[aria-label="App navigation"],
+html.light nav[aria-label="App navigation"] {
+  background-color: #F3F4F6 !important;
+  border-right: 1px solid #E5E7EB !important;
+}
+
+html:not(.dark) .sidebar,
+html.light .sidebar {
+  background-color: #F8FAFC !important;
+  border-right: 1px solid #E5E7EB !important;
+}
+
+html:not(.dark) .sidebar a,
+html.light .sidebar a,
+html:not(.dark) .sidebar button,
+html.light .sidebar button,
+html:not(.dark) nav a,
+html.light nav a,
+html:not(.dark) nav button,
+html.light nav button {
+  color: #4B5563 !important;
+  transition: all 0.15s ease !important;
+}
+
+html:not(.dark) .sidebar a:hover,
+html.light .sidebar a:hover,
+html:not(.dark) .sidebar button:hover,
+html.light .sidebar button:hover,
+html:not(.dark) nav a:hover,
+html.light nav a:hover,
+html:not(.dark) nav button:hover,
+html.light nav button:hover {
+  background-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+html:not(.dark) .sidebar .active,
+html.light .sidebar .active,
+html:not(.dark) nav .active,
+html.light nav .active {
+  background-color: var(--aegis-blue-subtle) !important;
+  color: var(--aegis-blue) !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) #messages-container,
+html.light #messages-container {
+  background-color: #FFFFFF !important;
+}
+
+html:not(.dark) #chat-input-container,
+html.light #chat-input-container {
+  background-color: transparent !important;
+}
+
+html:not(.dark) #chat-input,
+html.light #chat-input,
+html:not(.dark) textarea,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) button[id*="model-selector"],
+html.light button[id*="model-selector"],
+html:not(.dark) div[id*="model-menu"],
+html.light div[id*="model-menu"] {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: transparent;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 9999px;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover,
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* ==========================================================================
+   2. CYBER DARK FUTURISTIC MODE (html.dark)
+   ========================================================================== */
+html.dark {
+  color-scheme: dark !important;
+  --color-gray-900: #050B18 !important;
+  --color-gray-850: #080E1E !important;
+  --color-gray-800: #0B1120 !important;
+  --color-gray-700: #131D33 !important;
+  --color-gray-600: #1E293B !important;
+  --color-gray-500: #64748B !important;
+  --color-gray-400: #94A3B8 !important;
+  --color-gray-300: #CBD5E1 !important;
+  --color-gray-200: #E2E8F0 !important;
+  --color-gray-100: #F1F5F9 !important;
+  --color-gray-50: #FFFFFF !important;
+}
+
+html.dark body {
+  background-color: #020617 !important;
+  color: #F8FAFC !important;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
+    linear-gradient(180deg, #020617 0%, #050B18 50%, #080E1E 100%) !important;
+  background-attachment: fixed !important;
+}
+
+html.dark nav[aria-label="App navigation"],
+html.dark .sidebar {
+  background-color: rgba(5, 11, 24, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  border-right: 1px solid rgba(0, 229, 255, 0.12) !important;
+}
+
+html.dark .sidebar a:hover,
+html.dark .sidebar button:hover,
+html.dark nav a:hover,
+html.dark nav button:hover {
+  background-color: rgba(0, 229, 255, 0.08) !important;
+  color: var(--aegis-cyan) !important;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15) !important;
+}
+
+html.dark .sidebar .active,
+html.dark nav .active {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.25) 0%, rgba(0, 229, 255, 0.08) 100%) !important;
+  border-left: 3px solid var(--aegis-cyan) !important;
+  color: #FFFFFF !important;
+}
+
+html.dark #chat-input,
+html.dark textarea {
+  background-color: rgba(11, 17, 32, 0.85) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(0, 229, 255, 0.2) !important;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(5, 11, 24, 0.8);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.25);
+  border-radius: 9999px;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.55);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+/* ==========================================================================
+   3. UNIVERSAL LOGO & BRANDING ENFORCEMENT
+   ========================================================================== */
+img[alt="logo"],
+img[alt="favicon"],
+img[alt*="profile image"],
+nav button[aria-label="Home"] img,
+nav button[aria-label="Chat"] img,
+#sidebar-toggle-button img,
+button[id*="model-selector"] img,
+div[id*="model"] img,
+#logo,
+#logo-her {
+  filter: none !important;
+  -webkit-filter: none !important;
+  border-radius: 8px !important;
+  object-fit: contain !important;
+  transition: transform 0.2s ease !important;
+}
+
+img[alt="logo"]:hover,
+nav button[aria-label="Chat"] img:hover {
+  transform: scale(1.05);
+}
+
+html.dark img[alt="logo"],
+html.dark nav button[aria-label="Chat"] img {
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.45)) !important;
+}
+
+html:not(.dark) img[alt="logo"],
+html:not(.dark) nav button[aria-label="Chat"] img {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Aegis Agent & Hermes Avatar */
+img[src*="aegis-agent-avatar"],
+img[src*="hermes-avatar"] {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background-color: #0b0f19 !important;
+}
+
+html.dark img[src*="aegis-agent-avatar"],
+html.dark img[src*="hermes-avatar"] {
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.45) !important;
+}
+
+html:not(.dark) img[src*="aegis-agent-avatar"],
+html:not(.dark) img[src*="hermes-avatar"] {
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* ==========================================================================
+   4. KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes aegisPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes aegisGlowCyan {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(0, 229, 255, 0.7);
+  }
+}
+
+/* ==========================================================================
+   5. POINT 3: HEADER SECURITY & SOVEREIGNTY BADGE
+   ========================================================================== */
+.aegis-security-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 8px !important;
+  user-select: none !important;
+}
+
+.aegis-sec-badge-inner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 4px 12px !important;
+  border-radius: 9999px !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+html.dark .aegis-sec-badge-inner {
+  background: rgba(15, 23, 42, 0.75) !important;
+  border: 1px solid rgba(56, 189, 248, 0.28) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .aegis-sec-badge-inner:hover {
+  border-color: rgba(0, 229, 255, 0.5) !important;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.18) !important;
+}
+
+html:not(.dark) .aegis-sec-badge-inner {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  color: #475569 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(37, 99, 235, 0.05) !important;
+}
+
+html:not(.dark) .aegis-sec-badge-inner:hover {
+  border-color: rgba(37, 99, 235, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12) !important;
+}
+
+.aegis-sec-lock {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+html.dark .aegis-sec-lock {
+  color: #38bdf8 !important;
+}
+
+html:not(.dark) .aegis-sec-lock {
+  color: #2563eb !important;
+}
+
+.aegis-sec-divider {
+  opacity: 0.4 !important;
+  font-size: 10px !important;
+}
+
+.aegis-sec-pulse-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background-color: #10b981 !important;
+  box-shadow: 0 0 6px #10b981 !important;
+  display: inline-block !important;
+  animation: aegisPulse 2s infinite ease-in-out !important;
+}
+
+html.dark .aegis-sec-node-id {
+  color: #38bdf8 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) .aegis-sec-node-id {
+  color: #1d4ed8 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile responsive collapse for Security Badge */
+@media (max-width: 768px) {
+  .aegis-sec-enc,
+  .aegis-sec-divider {
+    display: none !important;
+  }
+  .aegis-sec-badge-inner {
+    padding: 3px 8px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* ==========================================================================
+   6. CLEAN OMNIBAR (Status pill suppressed per executive design request)
+   ========================================================================== */
+.aegis-model-status-pill {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ==========================================================================
+   7. POINT 2: CHAT MESSAGE BUBBLE ACCENTS (Aegis vs Hermes)
+   ========================================================================== */
+/* Assistant message Aegis Core */
+.aegis-msg-bubble-aegis .markdown-prose,
+.aegis-msg-bubble-aegis .markdown-prose-sm {
+  border-left: 3.5px solid #2563eb !important;
+  padding-left: 14px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+  transition: all 0.2s ease !important;
+}
+
+html.dark .aegis-msg-bubble-aegis .markdown-prose,
+html.dark .aegis-msg-bubble-aegis .markdown-prose-sm {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.07) 0%, transparent 60%) !important;
+}
+
+html:not(.dark) .aegis-msg-bubble-aegis .markdown-prose,
+html:not(.dark) .aegis-msg-bubble-aegis .markdown-prose-sm {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.03) 0%, transparent 60%) !important;
+}
+
+/* Assistant message Aegis Agent / Hermes */
+.aegis-msg-bubble-agent .markdown-prose,
+.aegis-msg-bubble-agent .markdown-prose-sm,
+.aegis-msg-bubble-hermes .markdown-prose,
+.aegis-msg-bubble-hermes .markdown-prose-sm {
+  border-left: 3.5px solid #00e5ff !important;
+  padding-left: 14px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+  transition: all 0.2s ease !important;
+}
+
+html.dark .aegis-msg-bubble-agent .markdown-prose,
+html.dark .aegis-msg-bubble-agent .markdown-prose-sm,
+html.dark .aegis-msg-bubble-hermes .markdown-prose,
+html.dark .aegis-msg-bubble-hermes .markdown-prose-sm {
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.09) 0%, transparent 60%) !important;
+}
+
+html:not(.dark) .aegis-msg-bubble-agent .markdown-prose,
+html:not(.dark) .aegis-msg-bubble-agent .markdown-prose-sm,
+html:not(.dark) .aegis-msg-bubble-hermes .markdown-prose,
+html:not(.dark) .aegis-msg-bubble-hermes .markdown-prose-sm {
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.05) 0%, transparent 60%) !important;
+}
+
+/* ==========================================================================
+   8. POINT 4: LUXURY macOS-STYLE CODE BLOCKS
+   ========================================================================== */
+.aegis-mac-code-window {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin: 12px 0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25) !important;
+  transition: border-color 0.2s ease !important;
+}
+
+html.dark .aegis-mac-code-window {
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+}
+
+html:not(.dark) .aegis-mac-code-window {
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* macOS Window Control Dots */
+.aegis-mac-controls {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin-right: 12px !important;
+  padding-left: 2px !important;
+}
+
+.aegis-mac-dot {
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  cursor: default !important;
+  transition: transform 0.15s ease, opacity 0.15s ease !important;
+}
+
+.aegis-mac-controls:hover .aegis-mac-dot {
+  opacity: 0.9 !important;
+}
+
+.aegis-mac-dot.dot-close {
+  background-color: #ff5f56 !important;
+  border: 1px solid #e0443e !important;
+}
+
+.aegis-mac-dot.dot-min {
+  background-color: #ffbd2e !important;
+  border: 1px solid #dea123 !important;
+}
+
+.aegis-mac-dot.dot-max {
+  background-color: #27c93f !important;
+  border: 1px solid #1aab29 !important;
+}
+
+/* Code Block Header */
+.aegis-mac-code-header {
+  padding: 8px 14px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11.5px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+html.dark .aegis-mac-code-header {
+  background: #090e1a !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) .aegis-mac-code-header {
+  background: #f1f5f9 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+/* Code Block Body */
+pre.hljs {
+  font-family: var(--font-mono) !important;
+  font-size: 12.5px !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0.01em !important;
+}
+
+html.dark pre.hljs {
+  background: #050811 !important;
+  color: #f1f5f9 !important;
+}
+
+html:not(.dark) pre.hljs {
+  background: #fafafa !important;
+  color: #1e293b !important;
+}
+
+/* Copy Button in Code Block */
+button.copy-code-button {
+  border-radius: 6px !important;
+  font-size: 11px !important;
+  padding: 3px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+html.dark button.copy-code-button:hover {
+  background: rgba(56, 189, 248, 0.2) !important;
+  color: #38bdf8 !important;
+}
+
+html:not(.dark) button.copy-code-button:hover {
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+/* ==========================================================================
+   9. POINT 5: OMNIBAR FOCUS GLOW & LUXURY INPUT CARD
+   ========================================================================== */
+.aegis-omnibar-card,
+#chat-input-container > div,
+form:has(textarea) {
+  border-radius: 20px !important;
+  transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease !important;
+}
+
+/* Focus glow in Dark Mode */
+html.dark .aegis-omnibar-card.aegis-omnibar-focused,
+html.dark form:focus-within,
+html.dark #chat-input-container:focus-within {
+  border-color: rgba(0, 229, 255, 0.5) !important;
+  box-shadow: 0 0 0 2.5px rgba(0, 229, 255, 0.25), 
+              0 10px 30px -4px rgba(0, 229, 255, 0.18), 
+              inset 0 0 15px rgba(0, 229, 255, 0.04) !important;
+}
+
+/* Focus glow in Light Mode */
+html:not(.dark) .aegis-omnibar-card.aegis-omnibar-focused,
+html:not(.dark) form:focus-within,
+html:not(.dark) #chat-input-container:focus-within {
+  border-color: rgba(37, 99, 235, 0.5) !important;
+  box-shadow: 0 0 0 2.5px rgba(37, 99, 235, 0.18), 
+              0 10px 25px -4px rgba(37, 99, 235, 0.12) !important;
+}
+
+/* ==========================================================================
+   10. ENTERPRISE COPYRIGHT FOOTER
+   ========================================================================== */
+/* ==========================================================================
+   10. ENTERPRISE COPYRIGHT FOOTER (Concise & Anchored at Page Bottom)
+   ========================================================================== */
+.aegis-disclaimer-replaced,
+div.absolute.bottom-1.text-xs,
+div[class*="text-center"][class*="text-xs"],
+#chat-input-container ~ div.text-xs {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#aegis-persistent-footer {
+  position: fixed !important;
+  bottom: 6px !important;
+  left: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 35 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.aegis-enterprise-footer-inner {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px 14px !important;
+  border-radius: 9999px !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.025em !important;
+  line-height: 1.3 !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: all 0.2s ease !important;
+}
+
+html.dark .aegis-enterprise-footer-inner {
+  color: rgba(148, 163, 184, 0.65) !important;
+  background: rgba(2, 6, 23, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.dark .aegis-enterprise-footer-inner strong {
+  color: rgba(241, 245, 249, 0.9) !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) .aegis-enterprise-footer-inner {
+  color: rgba(100, 116, 139, 0.75) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .aegis-enterprise-footer-inner strong {
+  color: rgba(30, 41, 59, 0.9) !important;
+  font-weight: 600 !important;
+}

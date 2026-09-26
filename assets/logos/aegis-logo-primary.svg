@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="primaryShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <linearGradient id="aiBadgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- LOGO ICON (Centered at x=60, y=60) -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Shield -->
+    <path d="M 50,8 
+             L 86,23 
+             C 86,59 69,84 50,94 
+             C 31,84 14,59 14,23 
+             Z" 
+          fill="#050B18" 
+          stroke="url(#primaryShieldGrad)" 
+          stroke-width="3" 
+          stroke-linejoin="round"
+          filter="url(#logoGlow)"/>
+
+    <!-- Inner Plate -->
+    <path d="M 50,14 
+             L 79,26 
+             C 79,55 65,76 50,85 
+             C 35,76 21,55 21,26 
+             Z" 
+          fill="#0B1120" 
+          stroke="#1E293B" 
+          stroke-width="1.2" 
+          opacity="0.8"/>
+
+    <!-- Neural Circuit Highlights -->
+    <path d="M 26,35 L 38,42 L 44,42" fill="none" stroke="#00E5FF" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="26" cy="35" r="1.5" fill="#00E5FF"/>
+    <path d="M 74,35 L 62,42 L 56,42" fill="none" stroke="#00E5FF" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="74" cy="35" r="1.5" fill="#00E5FF"/>
+
+    <!-- Monolithic Letter 'A' -->
+    <path d="M 50,22 
+             L 69,69 
+             L 58,69 
+             L 53,57 
+             L 47,57 
+             L 42,69 
+             L 31,69 
+             Z 
+             M 50,35 
+             L 45,49 
+             L 55,49 
+             Z" 
+          fill="#FFFFFF" 
+          filter="url(#logoGlow)"/>
+
+    <!-- Quantum Core -->
+    <circle cx="50" cy="44" r="3" fill="#00E5FF" filter="url(#logoGlow)"/>
+  </g>
+
+  <!-- LOGO TYPOGRAPHY -->
+  <g transform="translate(130, 20)">
+    <!-- "AEGIS" Text -->
+    <text x="0" y="52" 
+          font-family="system-ui, -apple-system, 'SF Pro Display', 'Inter', sans-serif" 
+          font-size="44" 
+          font-weight="800" 
+          letter-spacing="5" 
+          fill="url(#textGrad)">AEGIS</text>
+
+    <!-- "AI" Accent Capsule -->
+    <g transform="translate(200, 16)">
+      <rect x="0" y="0" width="68" height="42" rx="10" 
+            fill="url(#aiBadgeGrad)" 
+            filter="url(#logoGlow)"/>
+      <text x="34" y="29" 
+            font-family="system-ui, -apple-system, 'SF Pro Display', 'Inter', sans-serif" 
+            font-size="24" 
+            font-weight="900" 
+            letter-spacing="2" 
+            text-anchor="middle" 
+            fill="#050B18">AI</text>
+    </g>
+
+    <!-- Subtitle / Tagline -->
+    <text x="3" y="76" 
+          font-family="system-ui, -apple-system, 'SF Pro Display', 'Inter', sans-serif" 
+          font-size="11.5" 
+          font-weight="600" 
+          letter-spacing="5.5" 
+          fill="#94A3B8" 
+          opacity="0.9">ENTERPRISE INTELLIGENCE</text>
+
+    <!-- Status Beacon -->
+    <circle cx="270" cy="73" r="2.5" fill="#00E5FF"/>
+    <circle cx="270" cy="73" r="5" fill="none" stroke="#00E5FF" stroke-width="0.8" opacity="0.6"/>
+  </g>
+</svg>

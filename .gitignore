@@ -1,0 +1,24 @@
+# Environment and secret files
+.env
+.env.local
+*.pem
+*.key
+*.token
+
+# Local scratch / test files with session tokens
+debug_auth.js
+test_auth_capture.js
+test_capture_cdp.js
+test_capture_cdp2.js
+test_view.js
+cdp_inspect.js
+check_site.js
+verify_fix.js
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+node_modules/
+*.log

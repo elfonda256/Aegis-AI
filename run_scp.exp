@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+set timeout 60
+set src [lindex $argv 0]
+set dst [lindex $argv 1]
+set host [if {[info exists env(SERVER_HOST)]} {set env(SERVER_HOST)} else {set "103.56.206.89"}]
+set user [if {[info exists env(SERVER_USER)]} {set env(SERVER_USER)} else {set "efi"}]
+set pass [if {[info exists env(SERVER_PASS)]} {set env(SERVER_PASS)} else {set ""}]
+spawn scp -o StrictHostKeyChecking=no $src $user@$host:$dst
+expect {
+    -nocase "password:" {
+        send "$pass\r"
+        exp_continue
+    }
+    eof
+}
