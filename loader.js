@@ -91,8 +91,21 @@
         // Target only the specific update toast link or its container safely
         const updateLinks = document.querySelectorAll('a[href*="github.com/open-webui/open-webui/releases"]');
         updateLinks.forEach(link => {
+            // NEVER dismiss or touch elements inside modals, dialogs, or settings views
+            if (link.closest('[role="dialog"], #settings-modal, .modal, [aria-modal="true"], div[id*="settings"], div[id*="admin"]')) {
+                return;
+            }
+
             const toast = link.closest('.fixed, .absolute');
-            if (toast && toast !== document.body && !toast.contains(document.querySelector('main')) && !toast.contains(document.querySelector('nav'))) {
+            if (
+                toast && 
+                toast !== document.body && 
+                !toast.contains(document.querySelector('main')) && 
+                !toast.contains(document.querySelector('nav')) &&
+                !toast.querySelector('[role="dialog"]') &&
+                !toast.classList.contains('inset-0') &&
+                toast.id !== 'settings-modal'
+            ) {
                 toast.style.display = 'none';
             }
         });
@@ -101,6 +114,12 @@
         const svelteRoot = document.querySelector('body > div:first-child');
         if (svelteRoot && svelteRoot.style.display === 'none') {
             svelteRoot.style.display = 'contents';
+        }
+
+        // Safeguard: Ensure Settings modal or dialog is NEVER hidden
+        const settingsModal = document.querySelector('#settings-modal, [role="dialog"]');
+        if (settingsModal && settingsModal.style.display === 'none') {
+            settingsModal.style.display = '';
         }
     }
 

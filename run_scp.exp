@@ -2,9 +2,21 @@
 set timeout 60
 set src [lindex $argv 0]
 set dst [lindex $argv 1]
-set host [if {[info exists env(SERVER_HOST)]} {set env(SERVER_HOST)} else {set "103.56.206.89"}]
-set user [if {[info exists env(SERVER_USER)]} {set env(SERVER_USER)} else {set "efi"}]
-set pass [if {[info exists env(SERVER_PASS)]} {set env(SERVER_PASS)} else {set ""}]
+if {[info exists env(SERVER_HOST)]} {
+    set host $env(SERVER_HOST)
+} else {
+    set host "103.56.206.89"
+}
+if {[info exists env(SERVER_USER)]} {
+    set user $env(SERVER_USER)
+} else {
+    set user "efi"
+}
+if {[info exists env(SERVER_PASS)]} {
+    set pass $env(SERVER_PASS)
+} else {
+    set pass ""
+}
 spawn scp -o StrictHostKeyChecking=no $src $user@$host:$dst
 expect {
     -nocase "password:" {

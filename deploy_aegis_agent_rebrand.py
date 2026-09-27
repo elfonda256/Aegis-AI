@@ -60,26 +60,9 @@ c.execute('''
     WHERE id = 'hermes-agent'
 ''', (meta_json,))
 
-# Ensure aegis-agent entry also exists with exact params
-c.execute('SELECT id, user_id FROM model WHERE id = \\'hermes-agent\\'')
-row = c.fetchone()
-user_id = row[1] if row else 'system'
-
-c.execute('SELECT id FROM model WHERE id = \\'aegis-agent\\'')
-if not c.fetchone():
-    c.execute('''
-        INSERT INTO model (id, user_id, base_model_id, name, meta, params)
-        VALUES ('aegis-agent', ?, 'hermes-agent', 'Aegis Agent', ?, '{{}}')
-    ''', (user_id, meta_json))
-    print('Inserted aegis-agent model row!')
-else:
-    c.execute('''
-        UPDATE model 
-        SET name = 'Aegis Agent', 
-            meta = ? 
-        WHERE id = 'aegis-agent'
-    ''', (meta_json,))
-    print('Updated aegis-agent model row!')
+# Remove legacy duplicate aegis-agent entry if present
+c.execute('DELETE FROM model WHERE id = \\'aegis-agent\\'')
+print('Cleaned up duplicate aegis-agent model row!')
 
 conn.commit()
 conn.close()

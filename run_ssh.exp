@@ -1,9 +1,21 @@
 #!/usr/bin/expect -f
 set timeout 60
 set cmd [lindex $argv 0]
-set pass [if {[info exists env(SERVER_PASS)]} {set env(SERVER_PASS)} else {set ""}]
-set host [if {[info exists env(SERVER_HOST)]} {set env(SERVER_HOST)} else {set "103.56.206.89"}]
-set user [if {[info exists env(SERVER_USER)]} {set env(SERVER_USER)} else {set "efi"}]
+if {[info exists env(SERVER_PASS)]} {
+    set pass $env(SERVER_PASS)
+} else {
+    set pass ""
+}
+if {[info exists env(SERVER_HOST)]} {
+    set host $env(SERVER_HOST)
+} else {
+    set host "103.56.206.89"
+}
+if {[info exists env(SERVER_USER)]} {
+    set user $env(SERVER_USER)
+} else {
+    set user "efi"
+}
 spawn ssh -o StrictHostKeyChecking=no $user@$host "echo $pass | sudo -S $cmd"
 expect {
     -nocase "password:" {

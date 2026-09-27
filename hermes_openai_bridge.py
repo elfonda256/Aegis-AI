@@ -42,18 +42,6 @@ MODELS_LIST = [
         "name": "Aegis Agent",
         "description": "Aegis Autonomous Agent • Multi-Step Execution, Tool Use & Research by Maudy Network",
         "profile_image_url": "/static/aegis-agent-avatar.png?v=agent1"
-    },
-    {
-        "id": "aegis-agent",
-        "object": "model",
-        "created": 1727190000,
-        "owned_by": "aegis-ai",
-        "permission": [],
-        "root": "aegis-agent",
-        "parent": None,
-        "name": "Aegis Agent",
-        "description": "Aegis Autonomous Agent • Multi-Step Execution, Tool Use & Research by Maudy Network",
-        "profile_image_url": "/static/aegis-agent-avatar.png?v=agent1"
     }
 ]
 
@@ -209,6 +197,9 @@ class HermesBridgeHandler(http.server.BaseHTTPRequestHandler):
 
         if path.startswith("/v1/models/") or path.startswith("/models/"):
             model_id = path.split("/")[-1]
+            if model_id in ("hermes-agent", "aegis-agent"):
+                self._send_json(200, MODELS_LIST[0])
+                return
             for m in MODELS_LIST:
                 if m["id"] == model_id:
                     self._send_json(200, m)
